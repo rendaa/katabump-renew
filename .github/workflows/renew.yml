@@ -85,7 +85,7 @@ jobs:
             for p in "$ADDITIONAL_PROXIES" ; do
               echo $p >> proxies.txt
             done
-            echo "------- proxies list ---------"
+            echo "--------- proxy list ---------"
             cat proxies.txt
             echo "------------------------------"
           }
