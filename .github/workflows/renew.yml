@@ -83,12 +83,14 @@ jobs:
             -o proxies.txt
           [ -z "$ADDITIONAL_PROXIES" ] || {
             for p in "$ADDITIONAL_PROXIES" ; do
-              echo $p >> proxies.txt
+              echo $p > proxies
             done
-            echo "--------- proxy list ---------"
-            cat proxies.txt
-            echo "------------------------------"
+            cat proxies.txt >> proxies
+            mv proxies proxies.txt
           }
+          echo "--------- Proxy list ---------"
+          cat proxies.txt
+          echo "------------------------------"
           echo "Proxy list downloaded. Lines: $(wc -l < proxies.txt)"
         else
           echo "WEBSHARE_PROXY_LIST_URL is empty, running without Webshare proxy."
