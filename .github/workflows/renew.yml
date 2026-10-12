@@ -85,6 +85,9 @@ jobs:
             for p in "$ADDITIONAL_PROXIES" ; do
               echo $p >> proxies.txt
             done
+            echo "------- proxies list ---------"
+            cat proxies.txt
+            echo "------------------------------"
           }
           echo "Proxy list downloaded. Lines: $(wc -l < proxies.txt)"
         else
